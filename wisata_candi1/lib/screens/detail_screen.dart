@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_candi1/screens/detail_screen.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  const DetailScreen({super.key, required candi});
 
   @override
   Widget build(BuildContext context) {
