@@ -5,9 +5,26 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
-        children: [],
+        children: [
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets, symmetric(horizontal: 8.0),
+                child: ClipRect(
+                  borderRadius: BorderRadius, circular(20),
+                  child: Image.asset(
+                    candi.imageAsset,
+                    width: double.infinity,
+                    height: 300,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
