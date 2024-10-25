@@ -1,4 +1,4 @@
-package com.example.prj_candi_si51
+package com.example.wisata_candi1
 
 import io.flutter.embedding.android.FlutterActivity
 
