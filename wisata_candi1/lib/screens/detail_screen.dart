@@ -142,12 +142,10 @@ class DetailScreen extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 16),
-                    child: Text("Candi Borobudur, candi Buddha terbesar di dunia, dibangun oleh penganut Buddha Mahayana pada amat ke-9 di Jawa Tengah, Indonesia.
-                               Dengan enam teras dan tiga pelafalan melingkar yang di hiasi relief dan arca Buddha, Borobudur adalah tempat suci untuk memuliakan Buddha dan panduan ziarah menuju pencerahan. "
-                               Meskipun ditinggalkan pada abad ke-10, candi ini ditemukan kembali pada tahun 1814 dan setelah pemugaran besar-besaran, diakui sebagai Situs Warisan Dunia oleh UNIESCO")
+                    child: Text("Candi Borobudur, candi Buddha terbesar di dunia, dibangun oleh penganut Buddha Mahayana pada amat ke-9 di Jawa Tengah, Indonesia. Dengan enam teras dan tiga pelafalan melingkar yang di hiasi relief dan arca Buddha, Borobudur adalah tempat suci untuk memuliakan Buddha dan panduan ziarah menuju pencerahan. Meskipun ditinggalkan pada abad ke-10, candi ini ditemukan kembali pada tahun 1814 dan setelah pemugaran besar-besaran, diakui sebagai Situs Warisan Dunia oleh UNIESCO")
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(15),
+                  padding:  EdgeInsets.all(15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -172,7 +170,8 @@ class DetailScreen extends StatelessWidget {
                         return Padding(
                           padding: EdgeInsets.only(left: 8),
                         );
-                      }),
+                      }
+                      ),
                 ),
                 SizedBox(
                   height: 4,
@@ -181,9 +180,12 @@ class DetailScreen extends StatelessWidget {
                   'Tap untuk memperbesar',
                   style: TextStyle(fontSize: 12, color: Colors.black),
                 ),
-              ],
+        ],
+                    ),
+                ),
+  ],
             ),
-          )
+          ),
         ],
       ),
     );
