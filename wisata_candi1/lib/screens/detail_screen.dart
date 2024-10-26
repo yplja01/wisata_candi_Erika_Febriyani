@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:wisata_candi1/models/candi.dart';
 
@@ -133,57 +134,69 @@ class DetailScreen extends StatelessWidget {
                 ),
                 Container(
                   padding: EdgeInsets.all(16),
-                    child: Column(
-                      children: [
-                Row(
-                  children: [
-                    Text("Deskripsi",style: TextStyle(fontWeight: FontWeight.bold)),
-                  ],
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 16),
-                    child: Text("Candi Borobudur, candi Buddha terbesar di dunia, dibangun oleh penganut Buddha Mahayana pada amat ke-9 di Jawa Tengah, Indonesia. Dengan enam teras dan tiga pelafalan melingkar yang di hiasi relief dan arca Buddha, Borobudur adalah tempat suci untuk memuliakan Buddha dan panduan ziarah menuju pencerahan. Meskipun ditinggalkan pada abad ke-10, candi ini ditemukan kembali pada tahun 1814 dan setelah pemugaran besar-besaran, diakui sebagai Situs Warisan Dunia oleh UNIESCO")
-                ),
-                Padding(
-                  padding:  EdgeInsets.all(15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Column(
+                    children: [
+                      Row(
                         children: [
-                          Divider(
-                            color: Colors.deepPurple.shade100,
-                          ),
+                          Text("Deskripsi",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
                         ],
-                    ),
-                ),
-                const Text('Galeri',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  height: 100,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: candi.imageUrls.length,
-                      itemBuilder: (content, index) {
-                        return Padding(
-                          padding: EdgeInsets.only(left: 8),
-                        );
-                      }
                       ),
+                      Container(
+                          margin: EdgeInsets.only(top: 16),
+                          child: Text(
+                              "Candi Borobudur, candi Buddha terbesar di dunia, dibangun oleh penganut Buddha Mahayana pada amat ke-9 di Jawa Tengah, Indonesia. Dengan enam teras dan tiga pelafalan melingkar yang di hiasi relief dan arca Buddha, Borobudur adalah tempat suci untuk memuliakan Buddha dan panduan ziarah menuju pencerahan. Meskipun ditinggalkan pada abad ke-10, candi ini ditemukan kembali pada tahun 1814 dan setelah pemugaran besar-besaran, diakui sebagai Situs Warisan Dunia oleh UNIESCO")),
+                      Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Divider(
+                              color: Colors.deepPurple.shade100,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text('Galeri',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        height: 100,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: candi.imageUrls.length,
+                            itemBuilder: (content, index) {
+                              return Padding(
+                                padding: EdgeInsets.only(left: 8),
+                                child: GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                    decoration: BoxDecoration(),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: CachedNetworkImage(
+                                        imageUrl: candi.imageUrls[index],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                      ),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        'Tap untuk memperbesar',
+                        style: TextStyle(fontSize: 12, color: Colors.black),
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(
-                  height: 4,
-                ),
-                Text(
-                  'Tap untuk memperbesar',
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-        ],
-                    ),
-                ),
-  ],
+              ],
             ),
           ),
         ],
